@@ -2,6 +2,7 @@
 
 echo "Hello from Test"
 pwd
+cf --help
 cf api "$INPUT_CF_API"
 cf auth "$INPUT_CF_USERNAME" "$INPUT_CF_PASSWORD"
 
