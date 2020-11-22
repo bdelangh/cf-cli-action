@@ -4,5 +4,5 @@ RUN whoami
 USER piper
 RUN whoami
 
-ADD entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+ADD entrypoint.sh /home/piper/entrypoint.sh
+ENTRYPOINT ["/home/piper/entrypoint.sh"]
