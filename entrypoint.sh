@@ -9,7 +9,14 @@ cf --help
 #if [ -n "$INPUT_CF_ORG" ] && [ -n "$INPUT_CF_SPACE" ]; then
 #  cf target -o "$INPUT_CF_ORG" -s "$INPUT_CF_SPACE"
 #fi
-
+echo "Switching to user piper"
+su - piper
+echo "Swiched to user piper"
+pwd
+echo "Logging in to CF"
 cf login -u "$INPUT_CF_USERNAME" -p "$INPUT_CF_PASSWORD" -a "$INPUT_CF_API" -o "$INPUT_CF_ORG" -s "$INPUT_CF_SPACE"
+echo "... Logged in to CF"
 
+echo "Executing command"
 sh -c "cf $*"
+echo "... command executed"
